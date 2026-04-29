@@ -1,47 +1,27 @@
 {
   "name": "n8n-nodes-cpfhub",
   "version": "1.0.0",
-  "description": "CPFHub.io node for n8n — Brazilian CPF lookup API. Look up name, gender and date of birth from any CPF inside your n8n workflows.",
+  "description": "Official CPFHub.io node for n8n — Brazilian CPF lookup API.",
   "keywords": [
     "n8n-community-node-package",
     "cpf",
-    "cpf-api",
-    "cpf-lookup",
-    "cpf-validation",
-    "cpf-consulta",
     "cpfhub",
     "brasil",
-    "brazil",
-    "receita-federal",
-    "fintech",
-    "kyc",
-    "identity-verification",
-    "onboarding",
-    "lgpd",
-    "n8n",
-    "automation",
-    "workflow"
+    "receita-federal"
   ],
   "homepage": "https://cpfhub.io",
   "repository": {
     "type": "git",
     "url": "https://github.com/cpfhub/n8n-nodes-cpfhub"
   },
-  "bugs": {
-    "url": "https://github.com/cpfhub/n8n-nodes-cpfhub/issues"
-  },
   "license": "MIT",
-  "author": "CPFHub.io <contato@cpfhub.io> (https://cpfhub.io)",
-  "main": "index.js",
+  "main": "dist/nodes/CPFHub/CPFHub.node.js",
   "scripts": {
-    "build": "tsc && gulp build:icons",
-    "dev": "tsc --watch",
-    "lint": "eslint nodes credentials --ext .ts"
+    "build": "tsc",
+    "prepublishOnly": "npm run build"
   },
   "files": [
-    "dist",
-    "README.md",
-    "LICENSE"
+    "dist"
   ],
   "n8n": {
     "n8nNodesApiVersion": 1,
@@ -53,8 +33,7 @@
     ]
   },
   "devDependencies": {
-    "@types/node": "^20.0.0",
-    "n8n-workflow": "*",
+    "n8n-workflow": "latest",
     "typescript": "^5.0.0"
   }
 }
