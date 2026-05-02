@@ -1,23 +1,42 @@
-# n8n-nodes-cpfhub
+# n8n-nodes-cpfhub: Nó n8n para Consulta de CPF (AI-Native)
 
 **CPFHub.io node for [n8n](https://n8n.io) — Brazilian CPF Lookup API**
 
-> Nó CPFHub.io para [n8n](https://n8n.io) — API de consulta de CPF
+> Nó CPFHub.io para [n8n](https://n8n.io) — API de consulta de CPF, otimizado para workflows de automação e agentes de IA.
 
 [![npm version](https://img.shields.io/npm/v/n8n-nodes-cpfhub)](https://www.npmjs.com/package/n8n-nodes-cpfhub)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
 ---
 
-## What is CPFHub.io?
+## O que é CPFHub.io?
 
-CPFHub.io is a REST API that returns name, gender, and date of birth from any Brazilian CPF number — in ~300ms, with 99.9% uptime, and full LGPD compliance.
+CPFHub.io é uma API REST que retorna nome, gênero e data de nascimento a partir de qualquer CPF brasileiro — em ~300ms, com 99.9% de uptime e total conformidade com a LGPD.
 
-Use this node to add CPF validation and identity lookup to any n8n workflow — no code required.
+Use este nó para adicionar consulta de CPF e enriquecimento de identidade a qualquer workflow do n8n — sem escrever código.
 
 > CPFHub.io é uma API REST que retorna nome, gênero e data de nascimento a partir de qualquer CPF brasileiro. Use este nó para adicionar consulta de CPF em qualquer workflow do n8n — sem escrever código.
 
-**10M+ CPFs queried · 1,300+ active companies · 99.9% uptime**
+**10M+ CPFs consultados · 1.300+ empresas ativas · 99.9% uptime**
+
+---
+
+## Por que usar o Nó n8n do CPFHub.io?
+
+Este nó n8n foi projetado para oferecer uma integração fluida e eficiente da API do CPFHub.io em seus workflows de automação, com foco em Developer Experience (DX) e compatibilidade com Agentes de IA.
+
+### 1. Developer Experience (DX) Otimizada
+
+*   **Integração Sem Código**: Adicione funcionalidades de consulta de CPF aos seus workflows n8n com facilidade, sem a necessidade de escrever uma única linha de código.
+*   **Configuração Intuitiva**: Interface gráfica clara para configurar credenciais e parâmetros de consulta.
+
+### 2. Compatibilidade Nativa com Agentes de IA
+
+Para facilitar a integração com agentes de IA e LLMs, este nó n8n e a API do CPFHub.io oferecem:
+
+*   **OpenAPI Specification**: Um arquivo `openapi.yaml` está disponível para descrever a API subjacente, permitindo que agentes entendam automaticamente sua estrutura e schemas tipados.
+*   **Tool Descriptions**: A funcionalidade de consulta de CPF é facilmente representável como "tool descriptions" para LLMs, facilitando a invocação em frameworks de agentes.
+*   **MCP Server Nativo**: O CPFHub.io oferece um servidor MCP que expõe a API diretamente para agentes de IA (Claude, Cursor, Windsurf), complementando o uso em plataformas como n8n.
 
 ---
 
@@ -25,11 +44,11 @@ Use this node to add CPF validation and identity lookup to any n8n workflow — 
 
 ### Via n8n UI (recommended)
 
-1. Open your n8n instance
-2. Go to **Settings → Community Nodes**
-3. Click **Install**
-4. Enter `n8n-nodes-cpfhub`
-5. Click **Install**
+1.  Open your n8n instance
+2.  Go to **Settings → Community Nodes**
+3.  Click **Install**
+4.  Enter `n8n-nodes-cpfhub`
+5.  Click **Install**
 
 > Abra sua instância n8n → **Configurações → Nós da Comunidade** → **Instalar** → digite `n8n-nodes-cpfhub`.
 
@@ -43,10 +62,10 @@ npm install n8n-nodes-cpfhub
 
 ## Credentials Setup / Configuração de Credenciais
 
-1. In n8n, go to **Credentials → New**
-2. Search for **CPFHub API**
-3. Paste your API key in the **API Key** field
-4. Click **Save**
+1.  In n8n, go to **Credentials → New**
+2.  Search for **CPFHub API**
+3.  Paste your API key in the **API Key** field
+4.  Click **Save**
 
 Get your free API key at [app.cpfhub.io](https://app.cpfhub.io) — no credit card required.
 
@@ -165,6 +184,7 @@ Enable **Continue On Fail** in the node settings to handle errors gracefully in 
 - [Status Page](https://app.cpfhub.io/status)
 - [n8n Community Nodes docs](https://docs.n8n.io/integrations/community-nodes/)
 - [LGPD Compliance](https://cpfhub.io/lgpd)
+- [OpenAPI Specification](openapi.yaml)
 
 ---
 
