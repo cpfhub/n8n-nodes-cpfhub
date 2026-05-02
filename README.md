@@ -1,8 +1,8 @@
-# n8n-nodes-cpfhub: CPFHub.io node for n8n
+# n8n-nodes-cpfhub
 
-**CPFHub.io node for [n8n](https://n8n.io) — Brazilian CPF Lookup API**
+🇺🇸 **English** | [🇧🇷 Português](#português)
 
-> CPFHub.io node for [n8n](https://n8n.io) — CPF lookup API, optimized for automation workflows and AI agents.
+**Official CPFHub.io node for [n8n](https://n8n.io) — Brazilian CPF Lookup API**
 
 [![npm version](https://img.shields.io/npm/v/n8n-nodes-cpfhub)](https://www.npmjs.com/package/n8n-nodes-cpfhub)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
@@ -19,36 +19,17 @@ Use this node to add CPF lookup and identity enrichment to any n8n workflow — 
 
 ---
 
-## Why use the CPFHub.io n8n Node?
-
-This n8n node is designed to offer a fluid and efficient integration of the CPFHub.io API into your automation workflows, focusing on Developer Experience (DX) and compatibility with AI Agents.
-
-### 1. Optimized Developer Experience (DX)
-
-*   **No-Code Integration**: Easily add CPF lookup functionalities to your n8n workflows without writing a single line of code.
-*   **Intuitive Configuration**: Clear graphical interface to configure credentials and query parameters.
-
-### 2. Native Compatibility with AI Agents
-
-To facilitate integration with AI agents and LLMs, this n8n node and the CPFHub.io API offer:
-
-*   **OpenAPI Specification**: The official API specification is available at [cpfhub-openapi](https://github.com/cpfhub/cpfhub-openapi), allowing agents to automatically understand its structure and typed schemas.
-*   **Tool Descriptions**: The CPF lookup functionality is easily representable as "tool descriptions" for LLMs, facilitating invocation in agent frameworks.
-*   **Native MCP Server**: CPFHub.io offers an MCP server that exposes the API directly to AI agents (Claude, Cursor, Windsurf), complementing its use in platforms like n8n.
-
----
-
 ## Installation
 
-### Via n8n UI (recommended)
+**Via n8n UI (recommended):**
 
-1.  Open your n8n instance
-2.  Go to **Settings → Community Nodes**
-3.  Click **Install**
-4.  Enter `n8n-nodes-cpfhub`
-5.  Click **Install**
+1. Open your n8n instance
+2. Go to **Settings → Community Nodes**
+3. Click **Install**
+4. Enter `n8n-nodes-cpfhub`
+5. Click **Install**
 
-### Via npm (self-hosted)
+**Via npm (self-hosted):**
 
 ```bash
 npm install n8n-nodes-cpfhub
@@ -56,12 +37,39 @@ npm install n8n-nodes-cpfhub
 
 ---
 
+## curl Example
+
+```bash
+curl -X GET "https://api.cpfhub.io/cpf/12345678909" \\
+  -H "x-api-key: YOUR_API_KEY"
+```
+
+**Response:**
+
+```json
+{
+  "success": true,
+  "data": {
+    "cpf": "12345678909",
+    "name": "Fulano de Tal",
+    "nameUpper": "FULANO DE TAL",
+    "gender": "M",
+    "birthDate": "15/06/1990",
+    "day": 15,
+    "month": 6,
+    "year": 1990
+  }
+}
+```
+
+---
+
 ## Credentials Setup
 
-1.  In n8n, go to **Credentials → New**
-2.  Search for **CPFHub API**
-3.  Paste your API key in the **API Key** field
-4.  Click **Save**
+1. In n8n, go to **Credentials → New**
+2. Search for **CPFHub API**
+3. Paste your API key in the **API Key** field
+4. Click **Save**
 
 Get your free API key at [app.cpfhub.io](https://app.cpfhub.io) — no credit card required.
 
@@ -96,7 +104,7 @@ Looks up a CPF number and returns the associated identity data.
 
 Check the `examples/` directory for sample usage:
 
-*   [simple_lookup_workflow.json](examples/simple_lookup_workflow.json)
+- [simple_lookup_workflow.json](examples/simple_lookup_workflow.json)
 
 ### Onboarding validation
 
@@ -149,7 +157,7 @@ Enable **Continue On Fail** in the node settings to handle errors gracefully in 
 ## Rate Limits
 
 | Plan | Limit |
-|---|---|
+|------|-------|
 | Free | 1 request every 2 seconds · 50 requests/month |
 | Pro | 1 request per second · 1,000 requests/month |
 | Corporate | Custom |
@@ -178,14 +186,217 @@ Enable **Continue On Fail** in the node settings to handle errors gracefully in 
 ## Links
 
 - [Documentation](https://cpfhub.io/documentacao)
+- [npm Package](https://www.npmjs.com/package/n8n-nodes-cpfhub)
 - [Dashboard](https://app.cpfhub.io)
 - [Status Page](https://app.cpfhub.io/status)
 - [n8n Community Nodes docs](https://docs.n8n.io/integrations/community-nodes/)
 - [LGPD Compliance](https://cpfhub.io/lgpd)
 - [OpenAPI Specification](https://github.com/cpfhub/cpfhub-openapi/blob/main/openapi.yaml)
+- [MCP Server (AI Agents)](https://github.com/cpfhub/cpfhub-mcp)
 
 ---
 
 ## License
+
+MIT © [CPFHub.io](https://cpfhub.io)
+
+---
+
+# Português
+
+[🇺🇸 English](#n8n-nodes-cpfhub) | 🇧🇷 **Português**
+
+**Node oficial do CPFHub.io para [n8n](https://n8n.io) — API de Consulta de CPF Brasileiro**
+
+---
+
+## O que é o CPFHub.io?
+
+O CPFHub.io é uma API REST que retorna nome, gênero e data de nascimento de qualquer CPF brasileiro — em ~300ms, com 99,9% de uptime e total conformidade com a LGPD.
+
+Use este node para adicionar consulta de CPF e enriquecimento de identidade a qualquer workflow n8n — sem escrever código.
+
+**10M+ CPFs consultados · 1.300+ empresas ativas · 99,9% uptime**
+
+---
+
+## Instalação
+
+**Via interface do n8n (recomendado):**
+
+1. Abra sua instância do n8n
+2. Vá em **Settings → Community Nodes**
+3. Clique em **Install**
+4. Digite `n8n-nodes-cpfhub`
+5. Clique em **Install**
+
+**Via npm (self-hosted):**
+
+```bash
+npm install n8n-nodes-cpfhub
+```
+
+---
+
+## Exemplo curl
+
+```bash
+curl -X GET "https://api.cpfhub.io/cpf/12345678909" \\
+  -H "x-api-key: SUA_CHAVE_DE_API"
+```
+
+**Resposta:**
+
+```json
+{
+  "success": true,
+  "data": {
+    "cpf": "12345678909",
+    "name": "Fulano de Tal",
+    "nameUpper": "FULANO DE TAL",
+    "gender": "M",
+    "birthDate": "15/06/1990",
+    "day": 15,
+    "month": 6,
+    "year": 1990
+  }
+}
+```
+
+---
+
+## Configuração de Credenciais
+
+1. No n8n, vá em **Credentials → New**
+2. Pesquise por **CPFHub API**
+3. Cole sua chave de API no campo **API Key**
+4. Clique em **Save**
+
+Obtenha sua chave de API gratuita em [app.cpfhub.io](https://app.cpfhub.io) — sem cartão de crédito.
+
+---
+
+## Operações
+
+### CPF — Consulta
+
+Consulta um CPF e retorna os dados de identidade associados.
+
+| Campo | Descrição |
+|-------|----------|
+| **CPF** | O número do CPF a ser consultado (com ou sem formatação) |
+
+#### Campos de saída
+
+| Campo | Tipo | Descrição |
+|-------|------|----------|
+| `cpf` | String | CPF (apenas dígitos) |
+| `name` | String | Nome completo — `"Fulano de Tal"` |
+| `nameUpper` | String | Nome completo em maiúsculas |
+| `gender` | String | `"M"` ou `"F"` |
+| `birthDate` | String | Data de nascimento — `"DD/MM/YYYY"` |
+| `day` | Number | Dia de nascimento |
+| `month` | Number | Mês de nascimento |
+| `year` | Number | Ano de nascimento |
+
+---
+
+## Exemplos de Workflows
+
+Veja o diretório `examples/` para exemplos de uso:
+
+- [simple_lookup_workflow.json](examples/simple_lookup_workflow.json)
+
+### Validação de onboarding
+
+```
+Webhook (recebe CPF)
+  → CPFHub (Consulta CPF)
+  → IF (nome corresponde ao formulário?)
+      → Sim: Enviar e-mail de boas-vindas
+      → Não: Sinalizar para revisão manual
+```
+
+### Prevenção de fraude em e-commerce
+
+```
+WooCommerce / Shopify (novo pedido)
+  → CPFHub (Consulta CPF do comprador)
+  → IF (CPF válido e nome corresponde?)
+      → Sim: Aprovar pedido
+      → Não: Segurar pedido + notificar equipe no Slack
+```
+
+### Pipeline KYC com sincronização de CRM
+
+```
+Envio de formulário (Typeform / Tally)
+  → CPFHub (Consulta CPF)
+  → HubSpot (Criar ou atualizar contato com nome verificado)
+  → Enviar e-mail de confirmação via Gmail
+```
+
+---
+
+## Tratamento de Erros
+
+O node lança erros descritivos para cada status HTTP:
+
+| Código | Significado |
+|--------|-------------|
+| `400` | Formato de CPF inválido |
+| `401` | Chave de API inválida ou ausente |
+| `404` | CPF não encontrado |
+| `429` | Limite de requisições excedido — tente novamente em alguns segundos |
+| `500` | Erro no servidor CPFHub |
+| `503` | Serviço temporariamente indisponível |
+
+Ative **Continue On Fail** nas configurações do node para tratar erros de forma elegante no seu workflow.
+
+---
+
+## Limites de Requisição
+
+| Plano | Limite |
+|-------|--------|
+| Gratuito | 1 requisição a cada 2 segundos · 50 requisições/mês |
+| Pro | 1 requisição por segundo · 1.000 requisições/mês |
+| Corporativo | Personalizado |
+
+---
+
+## Planos e Preços
+
+| Plano | Preço | Incluído | Extra |
+|-------|-------|----------|-------|
+| **Gratuito** | R$ 0/mês | 50 consultas | — |
+| **Pro** | R$ 149/mês | 1.000 consultas | R$ 0,15/consulta |
+| **Corporativo** | Personalizado | Personalizado | Personalizado |
+
+[Ver preços completos em cpfhub.io →](https://cpfhub.io#pricing)
+
+---
+
+## Compatibilidade
+
+- n8n `1.0.0` e superior
+- Self-hosted e n8n Cloud
+
+---
+
+## Links
+
+- [Documentação](https://cpfhub.io/documentacao)
+- [Pacote npm](https://www.npmjs.com/package/n8n-nodes-cpfhub)
+- [Dashboard](https://app.cpfhub.io)
+- [Página de Status](https://app.cpfhub.io/status)
+- [Docs de Community Nodes do n8n](https://docs.n8n.io/integrations/community-nodes/)
+- [Conformidade LGPD](https://cpfhub.io/lgpd)
+- [Especificação OpenAPI](https://github.com/cpfhub/cpfhub-openapi/blob/main/openapi.yaml)
+- [Servidor MCP (Agentes de IA)](https://github.com/cpfhub/cpfhub-mcp)
+
+---
+
+## Licença
 
 MIT © [CPFHub.io](https://cpfhub.io)
