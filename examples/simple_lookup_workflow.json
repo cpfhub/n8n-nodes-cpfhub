@@ -1,0 +1,45 @@
+{
+  "nodes": [
+    {
+      "parameters": {},
+      "name": "Start",
+      "type": "n8n-nodes-base.start",
+      "typeVersion": 1,
+      "position": [
+        250,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "cpf": "00000000000"
+      },
+      "name": "CPFHub",
+      "type": "n8n-nodes-cpfhub.cpfhub",
+      "typeVersion": 1,
+      "position": [
+        450,
+        300
+      ],
+      "credentials": {
+        "cpfhubApi": {
+          "id": "1",
+          "name": "CPFHub API"
+        }
+      }
+    }
+  ],
+  "connections": {
+    "Start": {
+      "main": [
+        [
+          {
+            "node": "CPFHub",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  }
+}
